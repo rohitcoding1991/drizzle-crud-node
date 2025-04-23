@@ -1,0 +1,131 @@
+openapi: 3.0.3
+info:
+  title: User CRUD API
+  description: API for managing user operations including creating, retrieving, updating, and deleting users. This API allows for full CRUD (Create, Read, Update, Delete) operations on user resources, with endpoints to handle user data such as name and email. The API is designed to be simple and intuitive, providing clear paths for interacting with user data. It is hosted locally and supports typical CRUD functionalities, making it suitable for basic user management tasks.
+  version: 1.0.0
+servers:
+  - url: http://localhost:5000/
+    description: Local server
+
+tags:
+  - name: user
+    description: Everything about managing users
+
+paths:
+  /user:
+    post:
+      tags:
+        - user
+      summary: Add a new user
+      description: Create a new user by providing `name`, `email`.
+      requestBody:
+        description: user object that needs to be added
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                  description: The name of the user
+                  example: rahul
+                email:
+                  type: string
+                  description: The email of the user
+                  example: rahul@gmail.com
+              required:
+                - name
+                - email
+      responses:
+        '200':
+          description: User added successfully
+        '400':
+          description: Invalid input
+
+  /user/{id}:
+    get:
+      tags:
+        - user
+      summary: Get a user by ID
+      description: Retrieve a specific user by its ID.
+      parameters:
+        - name: id
+          in: path
+          required: true
+          description: ID of the user to retrieve
+          schema:
+            type: string
+      responses:
+        '200':
+          description: User details
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  id:
+                    type: string
+                    example: "123"
+                  name:
+                    type: string
+                    example: rahul
+                  email:
+                    type: string
+                    example: rahul@gmail.com
+        '404':
+          description: User not found
+
+    put:
+      tags:
+        - user
+      summary: Update an existing user by ID
+      description: Update the details of an existing user.
+      parameters:
+        - name: id
+          in: path
+          required: true
+          description: ID of the user to update
+          schema:
+            type: string
+      requestBody:
+        description: Updated user object
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                  description: The name of the user
+                  example: rahul updated
+                email:
+                  type: string
+                  description: The email of the user
+                  example: rahul_updated@gmail.com
+      responses:
+        '200':
+          description: User updated successfully
+        '400':
+          description: Invalid input
+        '404':
+          description: User not found
+
+    delete:
+      tags:
+        - user
+      summary: Delete a user by ID
+      description: Delete a user from the system by its ID.
+      parameters:
+        - name: id
+          in: path
+          required: true
+          description: ID of the user to delete
+          schema:
+            type: string
+      responses:
+        '200':
+          description: User deleted successfully
+        '404':
+          description: User not found

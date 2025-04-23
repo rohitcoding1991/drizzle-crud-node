@@ -1,0 +1,55 @@
+{
+	"info": {
+		"_postman_id": "6d6ca6e8-6e77-41bd-98ff-d73a6fd252fb",
+		"name": "drizzle-crud",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "31510432",
+		"_collection_link": "https://bold-escape-599223.postman.co/workspace/30-days-challenge~c614d447-b1ad-49c0-97b4-6ebaecac1d98/collection/31510432-6d6ca6e8-6e77-41bd-98ff-d73a6fd252fb?action=share&source=collection_link&creator=31510432"
+	},
+	"item": [
+		{
+			"name": "add-user",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": ""
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "user",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": ""
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "user",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": ""
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "user",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": ""
+				}
+			},
+			"response": []
+		}
+	]
+}
