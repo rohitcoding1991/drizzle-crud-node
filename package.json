@@ -4,9 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "dev": "nodemon src/index.js",
-    "start": "nodemon src/index.js",
-    "build": "tsc",
+    "dev": "node init && nodemon src/index.js",
+    "start": "node init && nodemon src/index.js",
+    "build": "node init && tsc",
     "db:generate": "drizzle-kit generate",
     "db:migrate": "drizzle-kit migrate"
   },
